@@ -1,2 +1,10 @@
-<p>shoppingcart works!</p>
-<app-shoppingcart-list></app-shoppingcart-list>
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Shoppingcart</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <app-shoppingcart-list (remove)="onRemoveFromCart($event)"></app-shoppingcart-list>
+    </div>
+</div>

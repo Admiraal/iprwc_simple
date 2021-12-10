@@ -1,2 +1,8 @@
-<p>shoppingcart-list works!</p>
-<app-shoppingcart-list-item></app-shoppingcart-list-item>
+<div class="row">
+    <div class="col-sm">
+        <app-shoppingcart-list-item
+            *ngFor="let product of productsInCart; let i = index"
+            [product]="product"
+            (remove)="onRemoveFromCart($event)"></app-shoppingcart-list-item>
+    </div>
+</div>

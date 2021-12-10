@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Product } from 'src/app/products/product.model';
+import { ShoppingcartService } from '../shoppingcart.service';
 
 @Component({
   selector: 'app-shoppingcart-list',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingcartListComponent implements OnInit {
 
-  constructor() { }
+  @Output() public remove: EventEmitter<Product> = new EventEmitter<Product>();
+  public productsInCart: Product[];
+
+  constructor(private shoppingcartService: ShoppingcartService) { }
 
   ngOnInit(): void {
+    this.shoppingcartService
+      .productsInCartChanged
+      .subscribe((products: Product[]) => {
+        this.productsInCart = products;
+      });
+  }
+
+  public onRemoveFromCart($event: Product): void{
+    this.remove.emit($event);
   }
 
 }
