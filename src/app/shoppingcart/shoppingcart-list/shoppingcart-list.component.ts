@@ -9,7 +9,7 @@ import { ShoppingcartService } from '../shoppingcart.service';
 })
 export class ShoppingcartListComponent implements OnInit {
 
-  @Output() public remove: EventEmitter<Product> = new EventEmitter<Product>();
+  @Output() public remove: EventEmitter<number> = new EventEmitter<number>();
   public productsInCart: Product[];
 
   constructor(private shoppingcartService: ShoppingcartService) { }
@@ -22,8 +22,9 @@ export class ShoppingcartListComponent implements OnInit {
       });
   }
 
-  public onRemoveFromCart($event: Product): void{
+  public onRemoveFromCart($event: number): void{
     this.remove.emit($event);
   }
+
 
 }

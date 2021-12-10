@@ -1,28 +1,66 @@
-## Simple IPRWC demo application
+# Simple IPRWC demo application
 
 Application used as demoproject in module about programming in a web context for University of Applied Sciences Leiden.
 
 
-## Development server
+## _Voorkennis:_
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Installeren npm (node package manager)
+2. Installeren Angular CLI
 
-## Code scaffolding
+- npm install -g @angular/cli
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Maak een nieuw Angular project aan genaamd &quot;iprwc-webshop&quot;
 
-## Build
+- ng new iprwc-webhop
+- Kies voor angular routing (y)
+- Kies je gewenste stylesheet format
+- Controleer of het werkt metng serve
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Voeg Bootstrap toe aan het project:
 
-## Running unit tests
+1. npm install bootstrap@4 –save
+2. Zorg dat het bootstrap grid systeem werkt in je project
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Importeer bootstrap.scss in ./src/styles.scss
 
-## Running end-to-end tests
+## Maak een products module:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Maak een module aan genaamd &quot;products&quot;
 
-## Further help
+- ng g m products
+- Controleer of de module is aangemaakt
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Maak een product model
+
+- ng g class products/product --type=model
+
+1. Maak een product service
+
+- ng g s products
+
+1. Maak een products component
+2. Maak een product-list component
+3. Maak een product-list-item component
+
+- ng g c products
+- ng g c products/product-list
+- ng g c products/product-list/product-list-item
+
+## Maak een shoppingcart module:
+
+1. Maak een module genaamd &quot;shoppingcart&quot;
+
+- ng g m shoppingcart
+
+1. Maak een shoppingcart service
+
+- ng g s shoppingcart
+
+1. Maak een shoppingcart component
+2. Maak een shoppingcart-list component
+3. Maak een shoppingcart-list-item component
+
+- ng g c shoppingcart
+- ng g c shoppingcart/shoppingcart-list
+- ng g c shoppingcart/shoppingcart-list/shoppingcart-list-item

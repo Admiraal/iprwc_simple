@@ -3,6 +3,7 @@
         <app-shoppingcart-list-item
             *ngFor="let product of productsInCart; let i = index"
             [product]="product"
+            [index]="i"
             (remove)="onRemoveFromCart($event)"></app-shoppingcart-list-item>
     </div>
 </div>

@@ -10,6 +10,7 @@ import { ProductsComponent } from '../../products.component';
 export class ProductListItemComponent implements OnInit {
 
   @Input() public product: Product;
+  @Input() public index: number;
   
   constructor() { }
 

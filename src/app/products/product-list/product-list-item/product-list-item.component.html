@@ -1,1 +1,17 @@
-<p>product-list-item works!</p>
+<div class="row product-row">
+
+    <div class="col-sm">
+        <img src="{{product.thumb_img_url}}">
+    </div>
+
+    <div class="col-sm">
+        <a [routerLink]="[index]">{{ product.name }}</a>
+    </div>
+
+    <div class="col-sm">
+        €{{ product.price }}
+    </div>
+
+</div>
+
+

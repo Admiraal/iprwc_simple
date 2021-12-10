@@ -23,8 +23,11 @@ export class ShoppingcartService {
     return this.productsInCart.slice();
   }
   
-  public removeFromCart(index: Product): void{
-    // this.productsInCart
-    console.log('haal product uit lijst');
+  public removeFromCart(index: number): void{
+    if (index > -1) {
+      this.productsInCart.splice(index, 1);
+   }
   }
+
+  
 }

@@ -14,7 +14,7 @@ export class ShoppingcartComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  public onRemoveFromCart($event: Product): void{
+  public onRemoveFromCart($event: number): void{
     this.cartService.removeFromCart($event);
   }
 }

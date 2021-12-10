@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, timeout } from 'rxjs';
 import { Product } from './product.model';
 
 @Injectable({
@@ -21,6 +21,29 @@ export class ProductService {
     return this.products[id];
   }
 
+  /**
+   * Simulates an untrustworthy and slow API
+   * @returns Promise<Product[]>
+   */
+  public getAll(): Promise<Product[]>{
+    return new Promise((resolve, reject) => {
+
+      const waitTime = this.randomWaitTime();   // make this simulation slow
+
+      if(waitTime <= 2000){
+        setTimeout( () => {
+          resolve(this.products)
+          
+        }, waitTime)
+      } else {                                  
+        reject('error')
+      }
+    });
+  }
+
+  private randomWaitTime(): number{
+    return Math.floor(Math.random() * 3000)
+  }
 
 
 }

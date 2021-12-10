@@ -7,6 +7,7 @@ import { ProductsModule } from './products/products.module';
 import { ShoppingcartModule } from './shoppingcart/shoppingcart.module';
 import { HeaderComponent } from './header/header.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
